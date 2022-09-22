@@ -15,7 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Todo App',
-      home: Home(),
+      initialRoute: 'home',
+      routes: {
+        'home': (context) => Home(),
+      },
     );
   }
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todo/color.dart';
+import 'package:todo/drawer.dart';
 import 'package:todo/todo.dart';
 import 'package:todo/todo_item.dart';
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -25,6 +25,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: tdBGColor,
+      drawer: MyDrawer(),
       appBar: _buildAppBar(),
       body: Stack(
         children: [
@@ -191,16 +192,11 @@ class _HomeState extends State<Home> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      backgroundColor: tdBGColor,
+      backgroundColor: tdGrey,
       elevation: 0,
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Icon(
-            Icons.menu,
-            color: tdBlack,
-            size: 30,
-          ),
           Container(
             height: 45,
             width: 45,
@@ -211,6 +207,6 @@ class _HomeState extends State<Home> {
           ),
         ],),
     );
-    ;
+
   }
 }
